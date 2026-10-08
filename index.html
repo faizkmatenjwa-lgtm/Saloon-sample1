@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zuri Studio | Salon, Spa & Barbershop in Nairobi</title>
+<meta name="description" content="Haircuts, braids, facials and massage. Pick your services and book on WhatsApp in under a minute.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--plum:#2B1634;--orchid:#B5338A;--orchid-d:#8F2569;--gold:#E0A83C;--paper:#FBF6FA;--blush:#F2E4EF;--ink:#241A28;--mute:#6B5B70}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:'Bricolage Grotesque','DM Sans',sans-serif;line-height:1.08;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{background:var(--plum);color:#fff}
+nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
+.logo{font:800 22px 'Bricolage Grotesque',sans-serif;text-decoration:none}
+.logo span{color:var(--gold)}
+nav a.nl{font-size:15px;text-decoration:none;opacity:.85;margin-left:18px}
+nav a.nl:hover{opacity:1}
+.hero{display:grid;gap:32px;padding:28px 0 56px;grid-template-columns:1fr}
+.hero h1{font-size:clamp(40px,8vw,72px);font-weight:800}
+.hero p.lead{margin-top:16px;max-width:46ch;opacity:.85;font-size:18px}
+.stats{display:flex;gap:20px;flex-wrap:wrap;margin-top:22px;font-size:15px;opacity:.9}
+.stats b{color:var(--gold)}
+.book{background:var(--paper);color:var(--ink);border-radius:20px;padding:22px;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.book h2{font-size:24px;margin-bottom:4px}
+.book .sub{color:var(--mute);font-size:15px;margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.chip{font:500 15px 'DM Sans',sans-serif;border:1.5px solid #D9C3D4;background:#fff;color:var(--ink);border-radius:999px;padding:9px 14px;cursor:pointer;transition:background .15s,border-color .15s}
+.chip[aria-pressed=true]{background:var(--orchid);border-color:var(--orchid);color:#fff}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.book input,.book select{width:100%;font:16px 'DM Sans',sans-serif;padding:11px 12px;border:1.5px solid #D9C3D4;border-radius:10px;background:#fff;color:var(--ink)}
+.book label{font-size:13px;color:var(--mute);display:block;margin-bottom:3px}
+.total{display:flex;justify-content:space-between;align-items:baseline;margin:14px 0 12px;font-weight:700}
+.total span:last-child{font:800 26px 'Bricolage Grotesque',sans-serif;color:var(--orchid-d)}
+.go{display:block;text-align:center;background:#1FA855;color:#fff;font-weight:700;text-decoration:none;padding:14px;border-radius:12px;border:0;width:100%;font-size:17px;cursor:pointer;font-family:inherit}
+.go:hover{background:#188a45}
+.note{font-size:13px;color:var(--mute);margin-top:8px;text-align:center}
+section{padding:60px 0}
+section h2{font-size:clamp(30px,5vw,44px);margin-bottom:8px}
+section .intro{color:var(--mute);max-width:52ch;margin-bottom:28px}
+.menu{display:grid;gap:28px;grid-template-columns:1fr}
+.menu h3{font-size:22px;color:var(--orchid-d);margin-bottom:8px;padding-bottom:6px;border-bottom:2px solid var(--blush)}
+.item{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px dashed #E2CFDD}
+.item small{display:block;color:var(--mute);font-size:14px}
+.item b{white-space:nowrap}
+.alt{background:var(--blush)}
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.ph{aspect-ratio:1;border-radius:14px;display:flex;align-items:flex-end;padding:12px;color:#fff;font-weight:700;font-size:15px}
+.ph:nth-child(1){background:linear-gradient(145deg,#B5338A,#2B1634)}
+.ph:nth-child(2){background:linear-gradient(145deg,#E0A83C,#8F2569)}
+.ph:nth-child(3){background:linear-gradient(145deg,#2B1634,#5E3A6E)}
+.ph:nth-child(4){background:linear-gradient(145deg,#6B5B70,#B5338A)}
+.ph:nth-child(5){background:linear-gradient(145deg,#8F2569,#E0A83C)}
+.ph:nth-child(6){background:linear-gradient(145deg,#5E3A6E,#2B1634)}
+.reviews{display:grid;gap:14px}
+.rev{background:#fff;border-radius:14px;padding:18px;border:1px solid #EAD8E6}
+.rev p{margin-bottom:8px}
+.rev span{font-size:14px;color:var(--mute)}
+.visit{display:grid;gap:24px}
+.hours div{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px dashed #E2CFDD;max-width:360px}
+.map{background:var(--plum);color:#fff;border-radius:16px;padding:24px;display:flex;flex-direction:column;justify-content:center;gap:12px}
+.map a{background:var(--gold);color:var(--plum);text-decoration:none;font-weight:700;padding:12px 16px;border-radius:10px;text-align:center}
+footer{background:var(--plum);color:#fff;padding:26px 0;font-size:14px;text-align:center}
+footer a{color:var(--gold)}
+@media(min-width:760px){
+ .hero{grid-template-columns:1.1fr .9fr;align-items:center;padding:48px 0 72px}
+ .menu{grid-template-columns:1fr 1fr 1fr}
+ .gal{grid-template-columns:repeat(3,1fr)}
+ .reviews{grid-template-columns:repeat(3,1fr)}
+ .visit{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap">
+  <nav>
+   <a class="logo" href="#">Zuri<span>.</span>Studio</a>
+   <div><a class="nl" href="#prices">Prices</a><a class="nl" href="#work">Our work</a><a class="nl" href="#visit">Find us</a></div>
+  </nav>
+  <div class="hero">
+   <div>
+    <h1>Fresh cut.<br>Fresh glow.<br>Booked in a minute.</h1>
+    <p class="lead">Haircuts, braids, facials and massage in the heart of Nairobi. Choose what you want, pick a time, and send it to us on WhatsApp.</p>
+    <div class="stats"><span><b>4.9</b> rating from clients</span><span><b>Open</b> 7 days a week</span><span><b>Walk-ins</b> welcome</span></div>
+   </div>
+   <div class="book" id="book">
+    <h2>Book your visit</h2>
+    <p class="sub">Tap the services you want.</p>
+    <div class="chips" id="chips"></div>
+    <div class="row">
+     <div><label for="day">Day</label><select id="day"></select></div>
+     <div><label for="time">Time</label><select id="time"></select></div>
+    </div>
+    <label for="name">Your name</label>
+    <input id="name" type="text" placeholder="e.g. Amina" autocomplete="name">
+    <div class="total"><span>Estimated total</span><span id="total">KES 0</span></div>
+    <button class="go" id="send" type="button">Send booking on WhatsApp</button>
+    <p class="note" id="msg">Pick at least one service to continue.</p>
+   </div>
+  </div>
+ </div>
+</header>
+
+<section id="prices">
+ <div class="wrap">
+  <h2>Prices</h2>
+  <p class="intro">Clear prices, no surprises. Final price may change slightly for very long or thick hair.</p>
+  <div class="menu">
+   <div><h3>Barbershop</h3>
+    <div class="item"><div>Classic haircut<small>30 min</small></div><b>KES 300</b></div>
+    <div class="item"><div>Fade and line-up<small>40 min</small></div><b>KES 500</b></div>
+    <div class="item"><div>Beard trim and shape<small>20 min</small></div><b>KES 300</b></div>
+    <div class="item"><div>Kids cut<small>Under 12</small></div><b>KES 250</b></div>
+   </div>
+   <div><h3>Hair and beauty</h3>
+    <div class="item"><div>Wash and blow-dry<small>45 min</small></div><b>KES 800</b></div>
+    <div class="item"><div>Braids (from)<small>2 to 5 hours</small></div><b>KES 1,500</b></div>
+    <div class="item"><div>Manicure<small>45 min</small></div><b>KES 700</b></div>
+    <div class="item"><div>Pedicure<small>60 min</small></div><b>KES 900</b></div>
+   </div>
+   <div><h3>Spa</h3>
+    <div class="item"><div>Deep cleansing facial<small>60 min</small></div><b>KES 2,000</b></div>
+    <div class="item"><div>Full body massage<small>60 min</small></div><b>KES 3,000</b></div>
+    <div class="item"><div>Back and shoulder massage<small>30 min</small></div><b>KES 1,500</b></div>
+    <div class="item"><div>Couples package<small>90 min, for two</small></div><b>KES 7,000</b></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="work" class="alt">
+ <div class="wrap">
+  <h2>Our work</h2>
+  <p class="intro">Your best cuts, styles and treatments go here. Send us your photos and we'll add them.</p>
+  <div class="gal">
+   <div class="ph">Fades</div><div class="ph">Braids</div><div class="ph">Facials</div>
+   <div class="ph">Locs</div><div class="ph">Nails</div><div class="ph">Massage</div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <h2>What clients say</h2>
+  <p class="intro" style="margin-bottom:20px">Sample reviews. We'll replace these with your real ones.</p>
+  <div class="reviews">
+   <div class="rev"><p>Best fade I've had in Nairobi. Booked on WhatsApp and was seated on time.</p><span>Brian, Kilimani</span></div>
+   <div class="rev"><p>The facial was so relaxing. Clean, quiet and fair prices.</p><span>Wanjiru, Westlands</span></div>
+   <div class="rev"><p>My braids lasted six weeks. I now bring my sisters too.</p><span>Achieng, Lavington</span></div>
+  </div>
+ </div>
+</section>
+
+<section id="visit" class="alt">
+ <div class="wrap visit">
+  <div>
+   <h2>Find us</h2>
+   <p class="intro">Ngong Road, Nairobi. Next to the main bus stage, second floor.</p>
+   <div class="hours">
+    <div><span>Mon to Fri</span><b>8:00 am to 8:00 pm</b></div>
+    <div><span>Saturday</span><b>8:00 am to 9:00 pm</b></div>
+    <div><span>Sunday</span><b>10:00 am to 6:00 pm</b></div>
+   </div>
+  </div>
+  <div class="map">
